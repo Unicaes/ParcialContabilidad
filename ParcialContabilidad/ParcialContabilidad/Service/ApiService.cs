@@ -13,8 +13,8 @@ namespace ParcialContabilidad.Service
     public class ApiService
     {
         private const String url = "http://contabilidadapi.azurewebsites.net/api/";
-        private static HttpClient cliente = new HttpClient();
-        public static async Task<Response> GetAll<T>(String Controller)
+        private HttpClient cliente = new HttpClient();
+        public async Task<Response> GetAll<T>(String Controller)
         {
             try
             {
@@ -47,7 +47,37 @@ namespace ParcialContabilidad.Service
                 };
             }
         }
-        public static async Task<Response> Post<T>(string controller, T item)
+        public async Task<Response> GetById<T>(String controller, int id)
+        {
+            try
+            {
+                var response = await cliente.GetAsync(url + controller + "/" + id);
+                if (!response.IsSuccessStatusCode)
+                {
+                    return new Response
+                    {
+                        IsSuccess = false,
+                        Message = JsonConvert.DeserializeObject<Response>(await response.Content.ReadAsStringAsync()).Message
+                    };
+                }
+                var result = await response.Content.ReadAsStringAsync();
+                var item = JsonConvert.DeserializeObject<T>(result);
+                return new Response
+                {
+                    IsSuccess = true,
+                    Result = item
+                };
+            }
+            catch (Exception e)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = $"Error al cargar los datos {e}"
+                };
+            }
+        }
+        public async Task<Response> Post<T>(string controller, T item)
         {
             try
             {
@@ -78,7 +108,7 @@ namespace ParcialContabilidad.Service
                 };
             }
         }
-        public static async Task<bool> Delete<T>(String controller, int id)
+        public async Task<bool> Delete<T>(String controller, int id)
         {
             try
             {
@@ -94,7 +124,7 @@ namespace ParcialContabilidad.Service
                 return false;
             }
         }
-        public static async Task<bool> Put<T>(String controller, object id, T item)
+        public async Task<bool> Put<T>(String controller, object id, T item)
         {
             try
             {
