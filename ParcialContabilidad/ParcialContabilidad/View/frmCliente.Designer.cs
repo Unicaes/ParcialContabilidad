@@ -62,6 +62,7 @@ namespace ParcialContabilidad.View
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(991, 462);
             this.dgvClientes.TabIndex = 0;
+            this.dgvClientes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvClientes_MouseClick);
             // 
             // id_Cliente
             // 

@@ -126,5 +126,10 @@ namespace ParcialContabilidad.View
             this.dgvClientes.ClearSelection();
             this.NombretxtMaterial.Text = String.Empty;
         }
+
+        private void dgvClientes_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.NombretxtMaterial.Text = this.dgvClientes.CurrentRow.Cells[1].Value.ToString();
+        }
     }
 }

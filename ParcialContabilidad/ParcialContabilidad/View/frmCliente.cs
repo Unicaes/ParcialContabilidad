@@ -127,5 +127,17 @@ namespace ParcialContabilidad.View
             this.dgvClientes.ClearSelection();
             this.NombretxtMaterial.Text = String.Empty;
         }
+
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.NombretxtMaterial.Text = this.dgvClientes.CurrentRow.Cells[1].Value.ToString();
+            this.ApellidotxtMaterial.Text = this.dgvClientes.CurrentRow.Cells[2].Value.ToString();
+        }
+
+        private void dgvClientes_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.NombretxtMaterial.Text = this.dgvClientes.CurrentRow.Cells[1].Value.ToString();
+            this.ApellidotxtMaterial.Text = this.dgvClientes.CurrentRow.Cells[2].Value.ToString();
+        }
     }
 }
