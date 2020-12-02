@@ -20,5 +20,10 @@ namespace ParcialContabilidad.View
             this.BackColor = ColorPallete.LightBlue;
 
         }
+
+        public void get_promedio(String product_id)
+        {
+            
+        }
     }
 }
