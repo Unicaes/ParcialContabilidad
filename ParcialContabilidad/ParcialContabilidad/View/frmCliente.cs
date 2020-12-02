@@ -1,10 +1,12 @@
 ﻿using ApiContabilidad.Models;
+using ParcialContabilidad.Model;
 using ParcialContabilidad.Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -71,15 +73,16 @@ namespace ParcialContabilidad.View
         {
             this.dgvClientes.Rows.Clear();
             this.dgvClientes.Refresh();
-            var resp = await api.GetAll<Cliente>("cliente");
-            if (!resp.IsSuccess)
+            var response = await api.GetAll<Cliente>("Cliente");
+            if (!response.IsSuccess)
             {
-
+                MessageBox.Show(response.Message);
+                return;
             }
-            ObservableCollection<Cliente> clientes = (ObservableCollection<Cliente>)resp.Result;
+            ObservableCollection<Cliente> clientes = (ObservableCollection<Cliente>)response.Result;
             for (int i = 0; i < clientes.Count; i++)
             {
-                dgvClientes.Rows.Add(new String[]{clientes[i].id_cliente.ToString(), clientes[i].nombre, clientes[i].apellido });
+                dgvClientes.Rows.Add(new string[] { clientes[i].id_cliente.ToString(), clientes[i].nombre, clientes[i].apellido });
             }
         }
         private async void btnGuardar_Click(object sender, EventArgs e)
@@ -89,7 +92,11 @@ namespace ParcialContabilidad.View
                 nombre = this.NombretxtMaterial.Text,
                 apellido = this.ApellidotxtMaterial.Text
             };
-            await api.Post<Cliente>("Cliente", item);
+            var resp = await api.Post<Cliente>("Cliente", item);
+            if (!resp.IsSuccess)
+            {
+                Debug.Print(resp.Message);
+            }
             LoadData();
         }
 
@@ -114,7 +121,7 @@ namespace ParcialContabilidad.View
         {
             if (!(this.dgvClientes.SelectedRows.Count > 0))
             {
-                MessageBox.Show("Debe seleccionar el registro a actualizar");
+                MessageBox.Show("Debe seleccionar el registro a eliminar");
                 return;
             }
             var id_Cliente = Convert.ToInt32(this.dgvClientes.CurrentRow.Cells[0].Value);

@@ -30,6 +30,7 @@ namespace ParcialContabilidad.Service
                 }
 
                 var result = await response.Content.ReadAsStringAsync();
+                //aqui se deserializa como Observable Collection
                 var list = JsonConvert.DeserializeObject<ObservableCollection<T>>(result);
 
                 return new Response
@@ -61,6 +62,7 @@ namespace ParcialContabilidad.Service
                     };
                 }
                 var result = await response.Content.ReadAsStringAsync();
+                //Aqui se deserializa como typo de clase definida
                 var item = JsonConvert.DeserializeObject<T>(result);
                 return new Response
                 {
