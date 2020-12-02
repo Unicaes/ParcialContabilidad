@@ -10,5 +10,6 @@ namespace ApiContabilidad.Models
         public string nombre { get; set; }
 
         public int? id_proveedor { get; set; }
+        public virtual Proveedor Proveedor { get; set; }
     }
 }

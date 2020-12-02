@@ -20,5 +20,7 @@ namespace ApiContabilidad.Models
         public int? id_cliente { get; set; }
 
         public int? id_vendedor { get; set; }
+        public virtual Cliente Cliente { get; set; }
+        public virtual Empleado Empleado { get; set; }
     }
 }

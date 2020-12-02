@@ -17,5 +17,8 @@ namespace ApiContabilidad.Models
         public float? precio_unitario { get; set; }
 
         public float? monto { get; set; }
+        public virtual Compra Compra { get; set; }
+
+        public virtual Producto Producto { get; set; }
     }
 }
