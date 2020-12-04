@@ -166,7 +166,11 @@ namespace ParcialContabilidad.View
             }
             ultimoPromedio = lprom[lprom.Count() - 1].costo_promedio;
         }
-
+        public double GetLastPromedio(int product_id)
+        {
+            get_promedio(product_id);
+            return ultimoPromedio;
+        }
         private void DgvProducto_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try {
