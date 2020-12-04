@@ -19,6 +19,5 @@ namespace ParcialContabilidad.Service
         public static Color MediumBlue = ColorTranslator.FromHtml("#14204a");
         public static Color LightRed = Color.FromArgb(165, 21, 80);
         
-
     }
 }

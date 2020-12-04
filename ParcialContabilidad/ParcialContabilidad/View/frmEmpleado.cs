@@ -148,5 +148,10 @@ namespace ParcialContabilidad.View
             this.ApellidotxtMaterial.Text = this.dgvClientes.CurrentRow.Cells[2].Value.ToString();
             this.TelefonotxtMaterial.Text = this.dgvClientes.CurrentRow.Cells[3].Value.ToString();
         }
+
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -40,12 +40,12 @@ namespace ParcialContabilidad.View
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TelefonotxtMaterial = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnLimpiar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnEliminar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnActualizar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnGuardar = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.TelefonotxtMaterial = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,9 +54,10 @@ namespace ParcialContabilidad.View
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(9, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 24);
+            this.label1.Size = new System.Drawing.Size(100, 18);
             this.label1.TabIndex = 3;
             this.label1.Text = "Empleados";
             // 
@@ -72,10 +73,9 @@ namespace ParcialContabilidad.View
             this.ApellidotxtMaterial.LineIdleColor = System.Drawing.Color.Gray;
             this.ApellidotxtMaterial.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.ApellidotxtMaterial.LineThickness = 3;
-            this.ApellidotxtMaterial.Location = new System.Drawing.Point(119, 93);
-            this.ApellidotxtMaterial.Margin = new System.Windows.Forms.Padding(4);
+            this.ApellidotxtMaterial.Location = new System.Drawing.Point(89, 76);
             this.ApellidotxtMaterial.Name = "ApellidotxtMaterial";
-            this.ApellidotxtMaterial.Size = new System.Drawing.Size(379, 33);
+            this.ApellidotxtMaterial.Size = new System.Drawing.Size(284, 27);
             this.ApellidotxtMaterial.TabIndex = 12;
             this.ApellidotxtMaterial.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -91,10 +91,9 @@ namespace ParcialContabilidad.View
             this.NombretxtMaterial.LineIdleColor = System.Drawing.Color.Gray;
             this.NombretxtMaterial.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.NombretxtMaterial.LineThickness = 3;
-            this.NombretxtMaterial.Location = new System.Drawing.Point(119, 47);
-            this.NombretxtMaterial.Margin = new System.Windows.Forms.Padding(4);
+            this.NombretxtMaterial.Location = new System.Drawing.Point(89, 38);
             this.NombretxtMaterial.Name = "NombretxtMaterial";
-            this.NombretxtMaterial.Size = new System.Drawing.Size(379, 33);
+            this.NombretxtMaterial.Size = new System.Drawing.Size(284, 27);
             this.NombretxtMaterial.TabIndex = 11;
             this.NombretxtMaterial.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -103,9 +102,10 @@ namespace ParcialContabilidad.View
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(39, 104);
+            this.label3.Location = new System.Drawing.Point(29, 84);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 17);
+            this.label3.Size = new System.Drawing.Size(58, 14);
             this.label3.TabIndex = 10;
             this.label3.Text = "Apellido:";
             // 
@@ -114,9 +114,10 @@ namespace ParcialContabilidad.View
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(39, 58);
+            this.label2.Location = new System.Drawing.Point(29, 47);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.Size = new System.Drawing.Size(57, 14);
             this.label2.TabIndex = 9;
             this.label2.Text = "Nombre:";
             // 
@@ -128,15 +129,17 @@ namespace ParcialContabilidad.View
             this.Nombre,
             this.Apellido,
             this.Telefono});
-            this.dgvClientes.Location = new System.Drawing.Point(12, 213);
+            this.dgvClientes.Location = new System.Drawing.Point(9, 173);
+            this.dgvClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersVisible = false;
             this.dgvClientes.RowHeadersWidth = 51;
             this.dgvClientes.RowTemplate.Height = 24;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(991, 433);
+            this.dgvClientes.Size = new System.Drawing.Size(743, 352);
             this.dgvClientes.TabIndex = 15;
+            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             this.dgvClientes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvClientes_MouseClick);
             // 
             // id_Cliente
@@ -171,6 +174,36 @@ namespace ParcialContabilidad.View
             this.Telefono.Name = "Telefono";
             this.Telefono.ReadOnly = true;
             // 
+            // TelefonotxtMaterial
+            // 
+            this.TelefonotxtMaterial.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TelefonotxtMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.TelefonotxtMaterial.ForeColor = System.Drawing.Color.White;
+            this.TelefonotxtMaterial.HintForeColor = System.Drawing.Color.White;
+            this.TelefonotxtMaterial.HintText = "Ingrese el telefono del empleado";
+            this.TelefonotxtMaterial.isPassword = false;
+            this.TelefonotxtMaterial.LineFocusedColor = System.Drawing.Color.Blue;
+            this.TelefonotxtMaterial.LineIdleColor = System.Drawing.Color.Gray;
+            this.TelefonotxtMaterial.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.TelefonotxtMaterial.LineThickness = 3;
+            this.TelefonotxtMaterial.Location = new System.Drawing.Point(89, 118);
+            this.TelefonotxtMaterial.Name = "TelefonotxtMaterial";
+            this.TelefonotxtMaterial.Size = new System.Drawing.Size(284, 27);
+            this.TelefonotxtMaterial.TabIndex = 14;
+            this.TelefonotxtMaterial.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(29, 127);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 14);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Telefono:";
+            // 
             // btnLimpiar
             // 
             this.btnLimpiar.ActiveBorderThickness = 1;
@@ -189,10 +222,10 @@ namespace ParcialContabilidad.View
             this.btnLimpiar.IdleFillColor = System.Drawing.Color.White;
             this.btnLimpiar.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnLimpiar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnLimpiar.Location = new System.Drawing.Point(796, 115);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(5);
+            this.btnLimpiar.Location = new System.Drawing.Point(597, 93);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(181, 41);
+            this.btnLimpiar.Size = new System.Drawing.Size(136, 33);
             this.btnLimpiar.TabIndex = 19;
             this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -215,10 +248,10 @@ namespace ParcialContabilidad.View
             this.btnEliminar.IdleFillColor = System.Drawing.Color.White;
             this.btnEliminar.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnEliminar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnEliminar.Location = new System.Drawing.Point(605, 115);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(5);
+            this.btnEliminar.Location = new System.Drawing.Point(454, 93);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(181, 41);
+            this.btnEliminar.Size = new System.Drawing.Size(136, 33);
             this.btnEliminar.TabIndex = 18;
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -241,10 +274,10 @@ namespace ParcialContabilidad.View
             this.btnActualizar.IdleFillColor = System.Drawing.Color.White;
             this.btnActualizar.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnActualizar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnActualizar.Location = new System.Drawing.Point(796, 58);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(5);
+            this.btnActualizar.Location = new System.Drawing.Point(597, 47);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(181, 41);
+            this.btnActualizar.Size = new System.Drawing.Size(136, 33);
             this.btnActualizar.TabIndex = 17;
             this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -267,49 +300,19 @@ namespace ParcialContabilidad.View
             this.btnGuardar.IdleFillColor = System.Drawing.Color.White;
             this.btnGuardar.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnGuardar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnGuardar.Location = new System.Drawing.Point(605, 58);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(5);
+            this.btnGuardar.Location = new System.Drawing.Point(454, 47);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(181, 41);
+            this.btnGuardar.Size = new System.Drawing.Size(136, 33);
             this.btnGuardar.TabIndex = 16;
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // TelefonotxtMaterial
-            // 
-            this.TelefonotxtMaterial.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TelefonotxtMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.TelefonotxtMaterial.ForeColor = System.Drawing.Color.White;
-            this.TelefonotxtMaterial.HintForeColor = System.Drawing.Color.White;
-            this.TelefonotxtMaterial.HintText = "Ingrese el telefono del empleado";
-            this.TelefonotxtMaterial.isPassword = false;
-            this.TelefonotxtMaterial.LineFocusedColor = System.Drawing.Color.Blue;
-            this.TelefonotxtMaterial.LineIdleColor = System.Drawing.Color.Gray;
-            this.TelefonotxtMaterial.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.TelefonotxtMaterial.LineThickness = 3;
-            this.TelefonotxtMaterial.Location = new System.Drawing.Point(119, 145);
-            this.TelefonotxtMaterial.Margin = new System.Windows.Forms.Padding(4);
-            this.TelefonotxtMaterial.Name = "TelefonotxtMaterial";
-            this.TelefonotxtMaterial.Size = new System.Drawing.Size(379, 33);
-            this.TelefonotxtMaterial.TabIndex = 14;
-            this.TelefonotxtMaterial.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(39, 156);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 17);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Telefono:";
-            // 
             // frmEmpleado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1015, 658);
+            this.ClientSize = new System.Drawing.Size(761, 535);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
@@ -323,6 +326,7 @@ namespace ParcialContabilidad.View
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmEmpleado";
             this.Text = "frmEmpleado";
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
