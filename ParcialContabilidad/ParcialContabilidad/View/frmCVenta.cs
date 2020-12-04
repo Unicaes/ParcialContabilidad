@@ -16,14 +16,16 @@ using System.Windows.Forms;
 
 namespace ParcialContabilidad.View
 {
-    public partial class frmCompraVenta : Form
+    public partial class frmCVenta : Form
     {
         private ApiService api;
-        List<Detalle_Compra> listaProducto = new List<Detalle_Compra>();
-        ObservableCollection<Proveedor> obsProveedor;
+        List<Detalle_Venta> listaProducto = new List<Detalle_Venta>();
+        ObservableCollection<Empleado> obsEmpleado;
         ObservableCollection<Producto> obsProducto;
-        Compra compra;
-        public frmCompraVenta()
+        ObservableCollection<Cliente> obsCliente;
+        Venta venta;
+        frmProveedor frmProv = new frmProveedor();
+        public frmCVenta()
         {
 
             this.TopLevel = false;
@@ -35,26 +37,32 @@ namespace ParcialContabilidad.View
         }
         private async void LoadProveedor()
         {
-            var response = await api.GetAll<Proveedor>("proveedor");
+            var response = await api.GetAll<Empleado>("empleado");
             var responses = await api.GetAll<Producto>("producto");
+            var responses2 = await api.GetAll<Cliente>("cliente");
             this.prodComboBox.Items.Clear();
-            this.provComboBox.Items.Clear();
-            this.provComboBox.Refresh();
+            this.vendComboBox.Items.Clear();
+            this.vendComboBox.Refresh();
             this.prodComboBox.Refresh();
 
             if (!response.IsSuccess || !responses.IsSuccess)
             {
                 return;
             }
-            obsProveedor = (ObservableCollection<Proveedor>)response.Result;
-            for (int i = 0; i < obsProveedor.Count; i++)
+            obsEmpleado = (ObservableCollection<Empleado>)response.Result;
+            for (int i = 0; i < obsEmpleado.Count; i++)
             {
-                provComboBox.Items.Add(obsProveedor[i].nombre);
+                vendComboBox.Items.Add(obsEmpleado[i].nombre);
             }
             obsProducto = (ObservableCollection<Producto>)responses.Result;
             for (int i = 0; i < obsProducto.Count; i++)
             {
                 prodComboBox.Items.Add(obsProducto[i].nombre);
+            }
+            obsCliente = (ObservableCollection<Cliente>)responses2.Result;
+            for (int i = 0; i < obsCliente.Count; i++)
+            {
+                clienComboBox.Items.Add(obsCliente[i].nombre);
             }
         }
         private async void LoadData()
@@ -65,7 +73,7 @@ namespace ParcialContabilidad.View
 
             if (!response_dc.IsSuccess || !response_dv.IsSuccess)
             {
-                MessageBox.Show(response_dc.Message);
+                MessageBox.Show(response_dv.Message);
                 return;
             }
             ObservableCollection<Detalle_Compra> detalle_compra = (ObservableCollection<Detalle_Compra>)response_dc.Result;
@@ -102,26 +110,24 @@ namespace ParcialContabilidad.View
         private async void bunifuThinButton21_Click(object sender, EventArgs e)
         {
             
-            compra = new Compra();
-            compra.fecha = dateTimePicker1.Value.Date;
+            venta = new Venta();
+            venta.fecha = dateTimePicker1.Value.Date;
 
-            var response = await api.Post<Compra>("compra", compra);
+            var response = await api.Post<Venta>("venta", venta);
 
             if (!response.IsSuccess)
             {
                 return;
             }
 
-            compra = (Compra)response.Result;
+            venta = (Venta)response.Result;
 
             for (int i = 0; i < listaProducto.Count; i++)
             {
-                listaProducto[i].id_compra = compra.id_compra;
-                listaProducto[i].Producto  =  null;
-                listaProducto[i].Compra = null;
-                await api.Post<Detalle_Compra>("Detalle_compra", listaProducto[i]);
+                listaProducto[i].id_venta = venta.id_venta;
+                await api.Post<Detalle_Venta>("Detalle_compra", listaProducto[i]);
             }
-            this.dgvCompra.Rows.Clear();
+            this.dgvVenta.Rows.Clear();
         }
 
         private async void btnSaveCompra_Click(object sender, EventArgs e)
@@ -129,44 +135,26 @@ namespace ParcialContabilidad.View
             try
             {
                 Producto producto;
-                if (checkBox1.Checked)
-                {
-                    producto = new Producto
-                    {
-                        nombre = this.btnNombre.Text,
-                        id_proveedor = obsProveedor[this.provComboBox.SelectedIndex].id_proveedor
-                    };
-                    var response = await api.Post<Producto>("producto", producto);
+                producto = obsProducto[prodComboBox.SelectedIndex];
+                
 
-                    if (!response.IsSuccess)
-                    {
-                        return;
-                    }
-
-                    producto = (Producto)response.Result;
-                }
-                else
-                {
-                    producto = obsProducto[prodComboBox.SelectedIndex];
-                }
-
-                Detalle_Compra detCompra = new Detalle_Compra();
-                if (CantCompraTextBox == null || PrecioCompraTextBox == null || prodComboBox.SelectedItem == null || provComboBox.SelectedItem == null)
+                Detalle_Venta detVenta = new Detalle_Venta();
+                if (CantCompraTextBox == null || prodComboBox.SelectedItem == null || vendComboBox.SelectedItem == null)
                 {
                     MessageBox.Show("Por favor ingrese los", "datos necesarios",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
-                detCompra.Producto = producto;
-                detCompra.Producto.Proveedor = obsProveedor[provComboBox.SelectedIndex];
-                detCompra.id_producto = producto.id_producto;
-                detCompra.cantidad = Convert.ToInt32(CantCompraTextBox.Text);
-                detCompra.precio_unitario = (float)Convert.ToDouble(PrecioCompraTextBox.Text);
-                detCompra.monto = detCompra.cantidad * detCompra.precio_unitario;
+                detVenta.Producto = producto;
+                detVenta.Venta = new Venta();
+                detVenta.Venta.Empleado = obsEmpleado[vendComboBox.SelectedIndex];
+                detVenta.id_producto = producto.id_producto;
+                detVenta.cantidad = Convert.ToInt32(CantCompraTextBox.Text);
+                detVenta.monto = detVenta.cantidad * detVenta.precio_unitario;
                 
-                listaProducto.Add(detCompra);
+                listaProducto.Add(detVenta);
 
-                dgvCompra.Rows.Add(new string[] { detCompra.Producto.nombre, detCompra.cantidad.ToString(), dateTimePicker1.Value.ToShortDateString(), detCompra.precio_unitario.ToString(), detCompra.Producto.Proveedor.nombre });
+                dgvVenta.Rows.Add(new string[] { detVenta.Producto.nombre, detVenta.cantidad.ToString(), dateTimePicker1.Value.ToShortDateString(), detVenta.monto.ToString(), detVenta.Producto.Proveedor.nombre });
             }
             catch (Exception)
             {
@@ -180,27 +168,25 @@ namespace ParcialContabilidad.View
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
-            Form item = new frmProveedor();
-            item.Show();
+            frmProv.Show();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void CantCompraTextBox_OnValueChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
-            {
-                this.prodComboBox.Enabled = false;
-                this.btnNombre.Enabled = true;
-            }
-            else
-            {
-                this.prodComboBox.Enabled = true;
-                this.btnNombre.Enabled = false;
-            }
+            Detalle_Venta detVenta = new Detalle_Venta();
+            
         }
 
-        private void dgvCompra_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void PrecioCompraTextBox_OnValueChanged(object sender, EventArgs e)
+        {
+            Detalle_Venta detVenta = new Detalle_Venta();
+            double precioreal = Convert.ToDouble(detVenta.cantidad * detVenta.precio_unitario);
+            label3.Text = Convert.ToString(precioreal);
         }
     }
 }

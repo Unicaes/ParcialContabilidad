@@ -1,4 +1,4 @@
-namespace ApiContabilidad.Models
+﻿namespace ApiContabilidad.Models
 {
     using System;
     using System.Collections.Generic;

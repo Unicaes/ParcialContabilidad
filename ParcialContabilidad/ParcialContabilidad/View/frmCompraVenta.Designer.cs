@@ -215,6 +215,8 @@ namespace ParcialContabilidad.View
             // 
             // dgvCompra
             // 
+            this.dgvCompra.AllowUserToAddRows = false;
+            this.dgvCompra.BackgroundColor = System.Drawing.SystemColors.ControlText;
             this.dgvCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
@@ -227,6 +229,7 @@ namespace ParcialContabilidad.View
             this.dgvCompra.RowHeadersVisible = false;
             this.dgvCompra.Size = new System.Drawing.Size(734, 199);
             this.dgvCompra.TabIndex = 46;
+            this.dgvCompra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompra_CellContentClick);
             // 
             // Nombre
             // 
@@ -265,7 +268,7 @@ namespace ParcialContabilidad.View
             this.btnFinalizarCompra.ActiveFillColor = System.Drawing.SystemColors.HotTrack;
             this.btnFinalizarCompra.ActiveForecolor = System.Drawing.Color.White;
             this.btnFinalizarCompra.ActiveLineColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnFinalizarCompra.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnFinalizarCompra.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnFinalizarCompra.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFinalizarCompra.BackgroundImage")));
             this.btnFinalizarCompra.ButtonText = "Finalizar compra";
             this.btnFinalizarCompra.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -291,7 +294,7 @@ namespace ParcialContabilidad.View
             this.btnProvform.ActiveFillColor = System.Drawing.SystemColors.HotTrack;
             this.btnProvform.ActiveForecolor = System.Drawing.Color.White;
             this.btnProvform.ActiveLineColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnProvform.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnProvform.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnProvform.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProvform.BackgroundImage")));
             this.btnProvform.ButtonText = "Nuevo proveedor";
             this.btnProvform.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -370,7 +373,7 @@ namespace ParcialContabilidad.View
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmCompraVenta";
-            this.Text = "frmCompraVenta";
+            this.Text = "r";
             this.Load += new System.EventHandler(this.frmCompraVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).EndInit();
             this.ResumeLayout(false);

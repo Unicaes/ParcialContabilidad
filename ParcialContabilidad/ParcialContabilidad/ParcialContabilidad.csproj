@@ -52,15 +52,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Empleado.cs" />
+    <Compile Include="Model\Proveedor.cs" />
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Compra.cs" />
     <Compile Include="Model\Detalle_Compra.cs" />
     <Compile Include="Model\Detalle_Venta.cs" />
-    <Compile Include="Model\Empleado.cs" />
     <Compile Include="Model\Inventario.cs" />
     <Compile Include="Model\Producto.cs" />
     <Compile Include="Model\Promedio.cs" />
-    <Compile Include="Model\Proveedor.cs" />
     <Compile Include="Model\Response.cs" />
     <Compile Include="Model\Venta.cs" />
     <Compile Include="Service\ColorPallete.cs" />
@@ -78,6 +78,12 @@
     </Compile>
     <Compile Include="View\frmCliente.Designer.cs">
       <DependentUpon>frmCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCVenta.Designer.cs">
+      <DependentUpon>frmCVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmCompraVenta.cs">
       <SubType>Form</SubType>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCVenta.resx">
+      <DependentUpon>frmCVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmCompraVenta.resx">
       <DependentUpon>frmCompraVenta.cs</DependentUpon>

@@ -132,7 +132,7 @@ namespace ParcialContabilidad.View
                 return;
             }
             var id_Empleado = Convert.ToInt32(this.dgvClientes.CurrentRow.Cells[0].Value);
-            await api.Delete<Empleado>("Empleado", id_Empleado);
+            await api.Delete<Proveedor>("Empleado", id_Empleado);
             LoadData();
         }
 

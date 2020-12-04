@@ -57,7 +57,7 @@ namespace ParcialContabilidad
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            item = new frmCompraVenta();
+            item = new frmCVenta();
             ContentContentPanel.Controls.Clear();
             ContentContentPanel.Controls.Add(item);
             item.Show();
