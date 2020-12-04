@@ -136,7 +136,6 @@ namespace ParcialContabilidad.View
             {
                 Producto producto;
                 producto = obsProducto[prodComboBox.SelectedIndex];
-                
 
                 Detalle_Venta detVenta = new Detalle_Venta();
                 if (CantCompraTextBox == null || prodComboBox.SelectedItem == null || vendComboBox.SelectedItem == null)
