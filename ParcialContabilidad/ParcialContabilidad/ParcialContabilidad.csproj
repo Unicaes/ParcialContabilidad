@@ -59,6 +59,7 @@
     <Compile Include="Model\Empleado.cs" />
     <Compile Include="Model\Inventario.cs" />
     <Compile Include="Model\Producto.cs" />
+    <Compile Include="Model\Promedio.cs" />
     <Compile Include="Model\Proveedor.cs" />
     <Compile Include="Model\Response.cs" />
     <Compile Include="Model\Venta.cs" />
