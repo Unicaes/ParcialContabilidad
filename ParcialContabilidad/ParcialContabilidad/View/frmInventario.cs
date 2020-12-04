@@ -30,19 +30,22 @@ namespace ParcialContabilidad.View
 
         public async void cargar_productos()
         {
-            this.dgvProducto.Rows.Clear();
-            this.dgvProducto.Refresh();
-
-            var response_p = await api.GetAll<Producto>("Producto");
-            ObservableCollection<Producto> producto =
-                (ObservableCollection<Producto>)response_p.Result;
-
-            for (int i = 0; i < producto.Count; i++)
+            try
             {
-                dgvProducto.Rows.Add(new string[] {
-                producto[i].id_producto.ToString(),
-                producto[i].nombre});
-            }
+                this.dgvProducto.Rows.Clear();
+                this.dgvProducto.Refresh();
+
+                var response_p = await api.GetAll<Producto>("Producto");
+                ObservableCollection<Producto> producto =
+                    (ObservableCollection<Producto>)response_p.Result;
+
+                for (int i = 0; i < producto.Count; i++)
+                {
+                    dgvProducto.Rows.Add(new string[] {
+                    producto[i].id_producto.ToString(),
+                    producto[i].nombre});
+                }
+            }catch (Exception ex) { Console.WriteLine(ex.Message); }
         }
 
         public async Task<double> get_promedio(int product_id)
@@ -171,10 +174,10 @@ namespace ParcialContabilidad.View
         {
             return await get_promedio(id_producto);
         }
-        private void DgvProducto_CellClick(object sender, DataGridViewCellEventArgs e)
+        private async void DgvProducto_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try {
-                this.get_promedio(int.Parse(dgvProducto.SelectedCells[0].Value.ToString()));
+                await this.get_promedio(int.Parse(dgvProducto.SelectedCells[0].Value.ToString()));
             }
             catch (Exception ex){Console.WriteLine(ex.Message);}        
         }
