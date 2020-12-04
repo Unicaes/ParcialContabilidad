@@ -140,12 +140,7 @@ namespace ParcialContabilidad.View
                 producto = obsProducto[prodComboBox.SelectedIndex];
 
                 Detalle_Venta detVenta = new Detalle_Venta();
-                if (CantCompraTextBox == null || prodComboBox.SelectedItem == null || vendComboBox.SelectedItem == null)
-                {
-                    MessageBox.Show("Por favor ingrese los", "datos necesarios",
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
+                
                 detVenta.Producto = producto;
                 detVenta.Venta = new Venta();
                 detVenta.Venta.Empleado = obsEmpleado[vendComboBox.SelectedIndex];
