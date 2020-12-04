@@ -34,7 +34,6 @@ namespace ParcialContabilidad.View
             this.vendComboBox = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvVenta = new System.Windows.Forms.DataGridView();
@@ -49,7 +48,6 @@ namespace ParcialContabilidad.View
             this.btnSaveVenta = new Bunifu.Framework.UI.BunifuThinButton2();
             this.clienComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +63,7 @@ namespace ParcialContabilidad.View
             this.CantCompraTextBox.LineIdleColor = System.Drawing.Color.Gray;
             this.CantCompraTextBox.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.CantCompraTextBox.LineThickness = 3;
-            this.CantCompraTextBox.Location = new System.Drawing.Point(201, 100);
+            this.CantCompraTextBox.Location = new System.Drawing.Point(251, 100);
             this.CantCompraTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.CantCompraTextBox.Name = "CantCompraTextBox";
             this.CantCompraTextBox.Size = new System.Drawing.Size(158, 27);
@@ -76,7 +74,7 @@ namespace ParcialContabilidad.View
             // vendComboBox
             // 
             this.vendComboBox.FormattingEnabled = true;
-            this.vendComboBox.Location = new System.Drawing.Point(399, 106);
+            this.vendComboBox.Location = new System.Drawing.Point(474, 106);
             this.vendComboBox.Name = "vendComboBox";
             this.vendComboBox.Size = new System.Drawing.Size(157, 21);
             this.vendComboBox.TabIndex = 41;
@@ -93,31 +91,19 @@ namespace ParcialContabilidad.View
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(396, 82);
+            this.label6.Location = new System.Drawing.Point(471, 82);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 14);
             this.label6.TabIndex = 38;
             this.label6.Text = "Vendedor:";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(198, 163);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 14);
-            this.label5.TabIndex = 37;
-            this.label5.Text = "Precio total:";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(198, 82);
+            this.label4.Location = new System.Drawing.Point(249, 82);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 14);
@@ -248,7 +234,7 @@ namespace ParcialContabilidad.View
             this.btnSaveVenta.IdleFillColor = System.Drawing.Color.White;
             this.btnSaveVenta.IdleForecolor = System.Drawing.SystemColors.Highlight;
             this.btnSaveVenta.IdleLineColor = System.Drawing.SystemColors.Highlight;
-            this.btnSaveVenta.Location = new System.Drawing.Point(595, 213);
+            this.btnSaveVenta.Location = new System.Drawing.Point(478, 175);
             this.btnSaveVenta.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaveVenta.Name = "btnSaveVenta";
             this.btnSaveVenta.Size = new System.Drawing.Size(153, 48);
@@ -259,7 +245,7 @@ namespace ParcialContabilidad.View
             // clienComboBox
             // 
             this.clienComboBox.FormattingEnabled = true;
-            this.clienComboBox.Location = new System.Drawing.Point(399, 192);
+            this.clienComboBox.Location = new System.Drawing.Point(252, 192);
             this.clienComboBox.Name = "clienComboBox";
             this.clienComboBox.Size = new System.Drawing.Size(157, 21);
             this.clienComboBox.TabIndex = 52;
@@ -269,23 +255,12 @@ namespace ParcialContabilidad.View
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(396, 175);
+            this.label2.Location = new System.Drawing.Point(249, 163);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 14);
             this.label2.TabIndex = 53;
             this.label2.Text = "Cliente:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Georgia", 12F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(198, 189);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 18);
-            this.label3.TabIndex = 54;
             // 
             // frmCVenta
             // 
@@ -293,7 +268,6 @@ namespace ParcialContabilidad.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(761, 535);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.clienComboBox);
             this.Controls.Add(this.label7);
@@ -305,7 +279,6 @@ namespace ParcialContabilidad.View
             this.Controls.Add(this.vendComboBox);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -326,7 +299,6 @@ namespace ParcialContabilidad.View
         private System.Windows.Forms.ComboBox vendComboBox;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvVenta;
@@ -340,6 +312,5 @@ namespace ParcialContabilidad.View
         private System.Windows.Forms.DataGridViewTextBoxColumn Vendedor;
         private System.Windows.Forms.ComboBox clienComboBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
     }
 }

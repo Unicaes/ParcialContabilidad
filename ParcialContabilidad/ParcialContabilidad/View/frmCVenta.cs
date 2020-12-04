@@ -125,7 +125,9 @@ namespace ParcialContabilidad.View
             for (int i = 0; i < listaProducto.Count; i++)
             {
                 listaProducto[i].id_venta = venta.id_venta;
-                await api.Post<Detalle_Venta>("Detalle_compra", listaProducto[i]);
+                listaProducto[i].Producto = null;
+                listaProducto[i].Venta = null;
+                await api.Post<Detalle_Venta>("Detalle_venta", listaProducto[i]);
             }
             this.dgvVenta.Rows.Clear();
         }
@@ -168,11 +170,7 @@ namespace ParcialContabilidad.View
             
         }
 
-        private void bunifuThinButton22_Click(object sender, EventArgs e)
-        {
-            frmProv.Show();
-        }
-
+        
         private void CantCompraTextBox_OnValueChanged(object sender, EventArgs e)
         {
             Detalle_Venta detVenta = new Detalle_Venta();
@@ -184,16 +182,6 @@ namespace ParcialContabilidad.View
 
         }
 
-        private void PrecioCompraTextBox_OnValueChanged(object sender, EventArgs e)
-        {
-            Detalle_Venta detVenta = new Detalle_Venta();
-
-            frmInventario frm = new frmInventario();
-            frm.get_promedio(Convert.ToInt32(prodComboBox.SelectedIndex));
-            double montoVenta = frm.ultimoPromedio;
-
-            double precioreal = montoVenta * Convert.ToInt32(CantCompraTextBox.Text);
-            label3.Text = Convert.ToString(precioreal);
-        }
+       
     }
 }
