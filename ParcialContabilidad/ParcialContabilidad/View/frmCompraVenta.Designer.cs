@@ -192,7 +192,7 @@ namespace ParcialContabilidad.View
             this.btnSaveCompra.ActiveFillColor = System.Drawing.SystemColors.HotTrack;
             this.btnSaveCompra.ActiveForecolor = System.Drawing.Color.White;
             this.btnSaveCompra.ActiveLineColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnSaveCompra.BackColor = System.Drawing.Color.Transparent;
+            this.btnSaveCompra.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnSaveCompra.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveCompra.BackgroundImage")));
             this.btnSaveCompra.ButtonText = "Agregar a lista";
             this.btnSaveCompra.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -392,6 +392,7 @@ namespace ParcialContabilidad.View
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmCompraVenta";
             this.Text = "r";
+            this.Activated += new System.EventHandler(this.frmCompraVenta_Activated);
             this.Load += new System.EventHandler(this.frmCompraVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).EndInit();
             this.ResumeLayout(false);

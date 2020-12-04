@@ -16,9 +16,11 @@ namespace ParcialContabilidad.View
     public partial class frmProveedor : Form
     {
         private ApiService api;
-        public frmProveedor()
+        frmCompraVenta item;
+        public frmProveedor(frmCompraVenta item=null)
         {
             InitializeComponent();
+            this.item = item;
             this.BackColor = ColorPallete.LightBlue;
 
             api = new ApiService();
@@ -141,6 +143,7 @@ namespace ParcialContabilidad.View
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
             this.Close();
+            item.LoadProv();
         }
     }
 }

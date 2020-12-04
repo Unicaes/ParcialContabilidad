@@ -178,7 +178,7 @@ namespace ParcialContabilidad.View
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
-            frmProveedor item = new frmProveedor();
+            frmProveedor item = new frmProveedor(this);
             item.Show();
         }
 
@@ -199,6 +199,25 @@ namespace ParcialContabilidad.View
         private void dgvCompra_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+        public async void LoadProv()
+        {
+            var response = await api.GetAll<Proveedor>("proveedor");
+            this.provComboBox.Items.Clear();
+            this.provComboBox.Refresh();
+            if (!response.IsSuccess)
+            {
+                return;
+            }
+            obsProveedor = (ObservableCollection<Proveedor>)response.Result;
+            for (int i = 0; i < obsProveedor.Count; i++)
+            {
+                provComboBox.Items.Add(obsProveedor[i].nombre);
+            }
+        }
+        private async void frmCompraVenta_Activated(object sender, EventArgs e)
+        {
+            
         }
     }
 }
