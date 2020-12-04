@@ -42,16 +42,16 @@ namespace ParcialContabilidad.View
             this.label2 = new System.Windows.Forms.Label();
             this.btnSaveCompra = new Bunifu.Framework.UI.BunifuThinButton2();
             this.dgvCompra = new System.Windows.Forms.DataGridView();
-            this.btnFinalizarCompra = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.prodComboBox = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnFinalizarCompra = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnProvform = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.prodComboBox = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,7 +194,7 @@ namespace ParcialContabilidad.View
             this.btnSaveCompra.ActiveFillColor = System.Drawing.SystemColors.HotTrack;
             this.btnSaveCompra.ActiveForecolor = System.Drawing.Color.White;
             this.btnSaveCompra.ActiveLineColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnSaveCompra.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSaveCompra.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnSaveCompra.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveCompra.BackgroundImage")));
             this.btnSaveCompra.ButtonText = "Agregar a lista";
             this.btnSaveCompra.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -224,8 +224,39 @@ namespace ParcialContabilidad.View
             this.Proveedor});
             this.dgvCompra.Location = new System.Drawing.Point(14, 268);
             this.dgvCompra.Name = "dgvCompra";
+            this.dgvCompra.RowHeadersVisible = false;
             this.dgvCompra.Size = new System.Drawing.Size(734, 199);
             this.dgvCompra.TabIndex = 46;
+            // 
+            // Nombre
+            // 
+            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // FechaCompra
+            // 
+            this.FechaCompra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FechaCompra.HeaderText = "Fecha de compra";
+            this.FechaCompra.Name = "FechaCompra";
+            // 
+            // Precio
+            // 
+            this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // Proveedor
+            // 
+            this.Proveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Proveedor.HeaderText = "Proveedor";
+            this.Proveedor.Name = "Proveedor";
             // 
             // btnFinalizarCompra
             // 
@@ -253,31 +284,31 @@ namespace ParcialContabilidad.View
             this.btnFinalizarCompra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnFinalizarCompra.Click += new System.EventHandler(this.bunifuThinButton21_Click);
             // 
-            // bunifuThinButton22
+            // btnProvform
             // 
-            this.bunifuThinButton22.ActiveBorderThickness = 1;
-            this.bunifuThinButton22.ActiveCornerRadius = 20;
-            this.bunifuThinButton22.ActiveFillColor = System.Drawing.SystemColors.HotTrack;
-            this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton22.ActiveLineColor = System.Drawing.SystemColors.MenuHighlight;
-            this.bunifuThinButton22.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.bunifuThinButton22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton22.BackgroundImage")));
-            this.bunifuThinButton22.ButtonText = "Nuevo proveedor";
-            this.bunifuThinButton22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton22.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.bunifuThinButton22.IdleBorderThickness = 1;
-            this.bunifuThinButton22.IdleCornerRadius = 20;
-            this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton22.IdleForecolor = System.Drawing.SystemColors.Highlight;
-            this.bunifuThinButton22.IdleLineColor = System.Drawing.SystemColors.Highlight;
-            this.bunifuThinButton22.Location = new System.Drawing.Point(563, 163);
-            this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuThinButton22.Name = "bunifuThinButton22";
-            this.bunifuThinButton22.Size = new System.Drawing.Size(153, 46);
-            this.bunifuThinButton22.TabIndex = 48;
-            this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuThinButton22.Click += new System.EventHandler(this.bunifuThinButton22_Click);
+            this.btnProvform.ActiveBorderThickness = 1;
+            this.btnProvform.ActiveCornerRadius = 20;
+            this.btnProvform.ActiveFillColor = System.Drawing.SystemColors.HotTrack;
+            this.btnProvform.ActiveForecolor = System.Drawing.Color.White;
+            this.btnProvform.ActiveLineColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnProvform.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnProvform.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProvform.BackgroundImage")));
+            this.btnProvform.ButtonText = "Nuevo proveedor";
+            this.btnProvform.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProvform.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProvform.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnProvform.IdleBorderThickness = 1;
+            this.btnProvform.IdleCornerRadius = 20;
+            this.btnProvform.IdleFillColor = System.Drawing.Color.White;
+            this.btnProvform.IdleForecolor = System.Drawing.SystemColors.Highlight;
+            this.btnProvform.IdleLineColor = System.Drawing.SystemColors.Highlight;
+            this.btnProvform.Location = new System.Drawing.Point(563, 163);
+            this.btnProvform.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProvform.Name = "btnProvform";
+            this.btnProvform.Size = new System.Drawing.Size(153, 46);
+            this.btnProvform.TabIndex = 48;
+            this.btnProvform.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnProvform.Click += new System.EventHandler(this.bunifuThinButton22_Click);
             // 
             // checkBox1
             // 
@@ -313,46 +344,16 @@ namespace ParcialContabilidad.View
             this.label7.TabIndex = 51;
             this.label7.Text = "Producto exisente: ";
             // 
-            // Nombre
-            // 
-            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // FechaCompra
-            // 
-            this.FechaCompra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.FechaCompra.HeaderText = "Fecha de compra";
-            this.FechaCompra.Name = "FechaCompra";
-            // 
-            // Precio
-            // 
-            this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            // 
-            // Proveedor
-            // 
-            this.Proveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Proveedor.HeaderText = "Proveedor";
-            this.Proveedor.Name = "Proveedor";
-            // 
             // frmCompraVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(761, 535);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.prodComboBox);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.bunifuThinButton22);
+            this.Controls.Add(this.btnProvform);
             this.Controls.Add(this.btnFinalizarCompra);
             this.Controls.Add(this.dgvCompra);
             this.Controls.Add(this.btnSaveCompra);
@@ -392,7 +393,7 @@ namespace ParcialContabilidad.View
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvCompra;
         private Bunifu.Framework.UI.BunifuThinButton2 btnFinalizarCompra;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnProvform;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ComboBox prodComboBox;
         private System.Windows.Forms.Label label7;

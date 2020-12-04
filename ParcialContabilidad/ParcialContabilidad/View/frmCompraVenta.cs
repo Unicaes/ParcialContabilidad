@@ -1,4 +1,5 @@
 ﻿using ApiContabilidad.Models;
+using ParcialContabilidad.View;
 using ParcialContabilidad.Model;
 using ParcialContabilidad.Service;
 using System;
@@ -22,7 +23,7 @@ namespace ParcialContabilidad.View
         ObservableCollection<Proveedor> obsProveedor;
         ObservableCollection<Producto> obsProducto;
         Compra compra;
-
+        frmProveedor frmProv = new frmProveedor();
         public frmCompraVenta()
         {
 
@@ -37,6 +38,10 @@ namespace ParcialContabilidad.View
         {
             var response = await api.GetAll<Proveedor>("proveedor");
             var responses = await api.GetAll<Producto>("producto");
+            this.prodComboBox.Items.Clear();
+            this.provComboBox.Items.Clear();
+            this.provComboBox.Refresh();
+            this.prodComboBox.Refresh();
 
             if (!response.IsSuccess || !responses.IsSuccess)
             {
@@ -133,45 +138,61 @@ namespace ParcialContabilidad.View
 
         private async void btnSaveCompra_Click(object sender, EventArgs e)
         {
-            Producto producto;
-            if (checkBox1.Checked)
+            try
             {
-                producto = new Producto
+                Producto producto;
+                if (checkBox1.Checked)
                 {
-                    nombre = this.btnNombre.Text,
-                    id_proveedor = obsProveedor[this.provComboBox.SelectedIndex].id_proveedor
-                };
-                var response = await api.Post<Producto>("producto", producto);
+                    producto = new Producto
+                    {
+                        nombre = this.btnNombre.Text,
+                        id_proveedor = obsProveedor[this.provComboBox.SelectedIndex].id_proveedor
+                    };
+                    var response = await api.Post<Producto>("producto", producto);
 
-                if (!response.IsSuccess)
+                    if (!response.IsSuccess)
+                    {
+                        return;
+                    }
+
+                    producto = (Producto)response.Result;
+                }
+                else
                 {
-                    return;
+                    producto = obsProducto[prodComboBox.SelectedIndex];
                 }
 
-                producto = (Producto)response.Result;
+                Detalle_Compra detCompra = new Detalle_Compra();
+                if (CantCompraTextBox == null || PrecioCompraTextBox == null || prodComboBox.SelectedItem == null || provComboBox.SelectedItem == null)
+                {
+                    MessageBox.Show("Por favor ingrese los", "datos necesarios",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                detCompra.Producto = producto;
+                detCompra.Producto.Proveedor = obsProveedor[provComboBox.SelectedIndex];
+                detCompra.id_producto = producto.id_producto;
+                detCompra.cantidad = Convert.ToInt32(CantCompraTextBox.Text);
+                detCompra.precio_unitario = (float)Convert.ToDouble(PrecioCompraTextBox.Text);
+                detCompra.monto = detCompra.cantidad * detCompra.precio_unitario;
+                
+                listaProducto.Add(detCompra);
+
+                dgvCompra.Rows.Add(new string[] { detCompra.Producto.nombre, detCompra.cantidad.ToString(), dateTimePicker1.Value.ToShortDateString(), detCompra.precio_unitario.ToString(), detCompra.Producto.Proveedor.nombre });
             }
-            else
+            catch (Exception)
             {
-                producto = obsProducto[prodComboBox.SelectedIndex];
+                MessageBox.Show("Ah ocurrido un error", "inesperado",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+                throw;
             }
-
-            Detalle_Compra detCompra = new Detalle_Compra();
-
-            detCompra.Producto = producto;
-            detCompra.Producto.Proveedor = obsProveedor[provComboBox.SelectedIndex];
-            detCompra.id_producto = producto.id_producto;
-            detCompra.cantidad = Convert.ToInt32(CantCompraTextBox.Text);
-            detCompra.precio_unitario = (float)Convert.ToDouble(PrecioCompraTextBox.Text);
-            detCompra.monto = detCompra.cantidad * detCompra.precio_unitario;
-
-            listaProducto.Add(detCompra);
-
-            dgvCompra.Rows.Add(new string[]{detCompra.Producto.nombre, detCompra.cantidad.ToString(), dateTimePicker1.Value.ToShortDateString(), detCompra.precio_unitario.ToString(), detCompra.Producto.Proveedor.nombre});
+            
         }
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
-
+            frmProv.Show();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
