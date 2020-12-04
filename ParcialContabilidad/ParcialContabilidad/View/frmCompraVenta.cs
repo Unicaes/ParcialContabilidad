@@ -151,12 +151,7 @@ namespace ParcialContabilidad.View
                 }
 
                 Detalle_Compra detCompra = new Detalle_Compra();
-                if (CantCompraTextBox == null || PrecioCompraTextBox == null || prodComboBox.SelectedItem == null || provComboBox.SelectedItem == null)
-                {
-                    MessageBox.Show("Por favor ingrese los", "datos necesarios",
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
+                
                 detCompra.Producto = producto;
                 detCompra.Producto.Proveedor = obsProveedor[provComboBox.SelectedIndex];
                 detCompra.id_producto = producto.id_producto;
