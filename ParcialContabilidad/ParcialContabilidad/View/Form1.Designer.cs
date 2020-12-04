@@ -34,27 +34,32 @@ namespace ParcialContabilidad
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SideMenuPanel = new System.Windows.Forms.Panel();
-            this.btnInventario = new System.Windows.Forms.PictureBox();
-            this.btnVentas = new System.Windows.Forms.PictureBox();
-            this.btnCompras = new System.Windows.Forms.PictureBox();
-            this.btnCliente = new System.Windows.Forms.PictureBox();
             this.btnEmpleado = new System.Windows.Forms.PictureBox();
-            this.ContentPanel = new System.Windows.Forms.Panel();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.ContentSidePanel = new System.Windows.Forms.Panel();
-            this.ElipseSidePanel = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.btnCliente = new System.Windows.Forms.PictureBox();
+            this.btnCompras = new System.Windows.Forms.PictureBox();
+            this.btnVentas = new System.Windows.Forms.PictureBox();
+            this.btnInventario = new System.Windows.Forms.PictureBox();
+            this.ContentPanel = new System.Windows.Forms.Panel();
             this.ContentContentPanel = new System.Windows.Forms.Panel();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.ElipseSidePanel = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.ElipseContentPanel = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.toolTipEmpleado = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipCliente = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipEntradas = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipSalidas = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipInventario = new System.Windows.Forms.ToolTip(this.components);
             this.TopMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SideMenuPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnInventario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnVentas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCompras)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEmpleado)).BeginInit();
-            this.ContentPanel.SuspendLayout();
             this.ContentSidePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCompras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnVentas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnInventario)).BeginInit();
+            this.ContentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // TopMenuPanel
@@ -100,54 +105,6 @@ namespace ParcialContabilidad
             this.SideMenuPanel.Size = new System.Drawing.Size(200, 678);
             this.SideMenuPanel.TabIndex = 1;
             // 
-            // btnInventario
-            // 
-            this.btnInventario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInventario.Image = global::ParcialContabilidad.Properties.Resources.box;
-            this.btnInventario.Location = new System.Drawing.Point(40, 533);
-            this.btnInventario.Name = "btnInventario";
-            this.btnInventario.Size = new System.Drawing.Size(100, 100);
-            this.btnInventario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnInventario.TabIndex = 4;
-            this.btnInventario.TabStop = false;
-            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
-            // 
-            // btnVentas
-            // 
-            this.btnVentas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVentas.Image = global::ParcialContabilidad.Properties.Resources.Outcoming;
-            this.btnVentas.Location = new System.Drawing.Point(40, 405);
-            this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Size = new System.Drawing.Size(100, 100);
-            this.btnVentas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnVentas.TabIndex = 3;
-            this.btnVentas.TabStop = false;
-            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
-            // 
-            // btnCompras
-            // 
-            this.btnCompras.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCompras.Image = global::ParcialContabilidad.Properties.Resources.Incoming;
-            this.btnCompras.Location = new System.Drawing.Point(40, 277);
-            this.btnCompras.Name = "btnCompras";
-            this.btnCompras.Size = new System.Drawing.Size(100, 100);
-            this.btnCompras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnCompras.TabIndex = 2;
-            this.btnCompras.TabStop = false;
-            this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
-            // 
-            // btnCliente
-            // 
-            this.btnCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCliente.Image = global::ParcialContabilidad.Properties.Resources.Client;
-            this.btnCliente.Location = new System.Drawing.Point(40, 149);
-            this.btnCliente.Name = "btnCliente";
-            this.btnCliente.Size = new System.Drawing.Size(100, 100);
-            this.btnCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnCliente.TabIndex = 1;
-            this.btnCliente.TabStop = false;
-            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
-            // 
             // btnEmpleado
             // 
             this.btnEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -158,23 +115,8 @@ namespace ParcialContabilidad
             this.btnEmpleado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnEmpleado.TabIndex = 0;
             this.btnEmpleado.TabStop = false;
+            this.toolTipEmpleado.SetToolTip(this.btnEmpleado, "Vista Empleados");
             this.btnEmpleado.Click += new System.EventHandler(this.btnEmpleado_Click);
-            // 
-            // ContentPanel
-            // 
-            this.ContentPanel.Controls.Add(this.ContentContentPanel);
-            this.ContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ContentPanel.Location = new System.Drawing.Point(200, 75);
-            this.ContentPanel.Name = "ContentPanel";
-            this.ContentPanel.Size = new System.Drawing.Size(1035, 678);
-            this.ContentPanel.TabIndex = 2;
-            // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.TopMenuPanel;
-            this.bunifuDragControl1.Vertical = true;
             // 
             // ContentSidePanel
             // 
@@ -187,10 +129,66 @@ namespace ParcialContabilidad
             this.ContentSidePanel.Size = new System.Drawing.Size(180, 658);
             this.ContentSidePanel.TabIndex = 5;
             // 
-            // ElipseSidePanel
+            // btnCliente
             // 
-            this.ElipseSidePanel.ElipseRadius = 7;
-            this.ElipseSidePanel.TargetControl = this.ContentSidePanel;
+            this.btnCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCliente.Image = global::ParcialContabilidad.Properties.Resources.Client;
+            this.btnCliente.Location = new System.Drawing.Point(40, 149);
+            this.btnCliente.Name = "btnCliente";
+            this.btnCliente.Size = new System.Drawing.Size(100, 100);
+            this.btnCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCliente.TabIndex = 1;
+            this.btnCliente.TabStop = false;
+            this.toolTipCliente.SetToolTip(this.btnCliente, "Vista Cliente");
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            // 
+            // btnCompras
+            // 
+            this.btnCompras.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCompras.Image = global::ParcialContabilidad.Properties.Resources.Incoming;
+            this.btnCompras.Location = new System.Drawing.Point(40, 277);
+            this.btnCompras.Name = "btnCompras";
+            this.btnCompras.Size = new System.Drawing.Size(100, 100);
+            this.btnCompras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCompras.TabIndex = 2;
+            this.btnCompras.TabStop = false;
+            this.toolTipEntradas.SetToolTip(this.btnCompras, "Ver Entradas");
+            this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
+            // 
+            // btnVentas
+            // 
+            this.btnVentas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVentas.Image = global::ParcialContabilidad.Properties.Resources.Outcoming;
+            this.btnVentas.Location = new System.Drawing.Point(40, 405);
+            this.btnVentas.Name = "btnVentas";
+            this.btnVentas.Size = new System.Drawing.Size(100, 100);
+            this.btnVentas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnVentas.TabIndex = 3;
+            this.btnVentas.TabStop = false;
+            this.toolTipSalidas.SetToolTip(this.btnVentas, "Ver Salidas");
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
+            // 
+            // btnInventario
+            // 
+            this.btnInventario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInventario.Image = global::ParcialContabilidad.Properties.Resources.box;
+            this.btnInventario.Location = new System.Drawing.Point(40, 533);
+            this.btnInventario.Name = "btnInventario";
+            this.btnInventario.Size = new System.Drawing.Size(100, 100);
+            this.btnInventario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnInventario.TabIndex = 4;
+            this.btnInventario.TabStop = false;
+            this.toolTipInventario.SetToolTip(this.btnInventario, "Ver Inventario");
+            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
+            // 
+            // ContentPanel
+            // 
+            this.ContentPanel.Controls.Add(this.ContentContentPanel);
+            this.ContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContentPanel.Location = new System.Drawing.Point(200, 75);
+            this.ContentPanel.Name = "ContentPanel";
+            this.ContentPanel.Size = new System.Drawing.Size(1035, 678);
+            this.ContentPanel.TabIndex = 2;
             // 
             // ContentContentPanel
             // 
@@ -198,6 +196,18 @@ namespace ParcialContabilidad
             this.ContentContentPanel.Name = "ContentContentPanel";
             this.ContentContentPanel.Size = new System.Drawing.Size(1015, 658);
             this.ContentContentPanel.TabIndex = 0;
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.TopMenuPanel;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // ElipseSidePanel
+            // 
+            this.ElipseSidePanel.ElipseRadius = 7;
+            this.ElipseSidePanel.TargetControl = this.ContentSidePanel;
             // 
             // ElipseContentPanel
             // 
@@ -219,13 +229,13 @@ namespace ParcialContabilidad
             this.TopMenuPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.SideMenuPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnInventario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnVentas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCompras)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEmpleado)).EndInit();
-            this.ContentPanel.ResumeLayout(false);
             this.ContentSidePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCompras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnVentas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnInventario)).EndInit();
+            this.ContentPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -247,6 +257,11 @@ namespace ParcialContabilidad
         private Bunifu.Framework.UI.BunifuElipse ElipseSidePanel;
         private System.Windows.Forms.Panel ContentContentPanel;
         private Bunifu.Framework.UI.BunifuElipse ElipseContentPanel;
+        private System.Windows.Forms.ToolTip toolTipEmpleado;
+        private System.Windows.Forms.ToolTip toolTipCliente;
+        private System.Windows.Forms.ToolTip toolTipEntradas;
+        private System.Windows.Forms.ToolTip toolTipSalidas;
+        private System.Windows.Forms.ToolTip toolTipInventario;
     }
 }
 

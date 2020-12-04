@@ -17,6 +17,7 @@ namespace ParcialContabilidad.View
     public partial class frmInventario : Form
     {
         private ApiService api;
+        public double ultimoPromedio;
         public frmInventario()
         {
             this.TopLevel = false;
@@ -163,6 +164,7 @@ namespace ParcialContabilidad.View
                 this.txtCostoVenta.Text = "$ " + costo_venta;
                 this.txtUtilidad.Text = "$ " + saldo.ToString();
             }
+            ultimoPromedio = lprom[lprom.Count() - 1].costo_promedio;
         }
 
         private void DgvProducto_CellClick(object sender, DataGridViewCellEventArgs e)
