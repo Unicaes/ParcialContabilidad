@@ -52,6 +52,7 @@ namespace ParcialContabilidad.View
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.prodComboBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.Compras = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,10 +68,10 @@ namespace ParcialContabilidad.View
             this.btnNombre.LineIdleColor = System.Drawing.Color.Gray;
             this.btnNombre.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.btnNombre.LineThickness = 3;
-            this.btnNombre.Location = new System.Drawing.Point(12, 100);
-            this.btnNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNombre.Location = new System.Drawing.Point(16, 150);
+            this.btnNombre.Margin = new System.Windows.Forms.Padding(5);
             this.btnNombre.Name = "btnNombre";
-            this.btnNombre.Size = new System.Drawing.Size(157, 27);
+            this.btnNombre.Size = new System.Drawing.Size(209, 33);
             this.btnNombre.TabIndex = 44;
             this.btnNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -86,10 +87,10 @@ namespace ParcialContabilidad.View
             this.PrecioCompraTextBox.LineIdleColor = System.Drawing.Color.Gray;
             this.PrecioCompraTextBox.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.PrecioCompraTextBox.LineThickness = 3;
-            this.PrecioCompraTextBox.Location = new System.Drawing.Point(399, 100);
-            this.PrecioCompraTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.PrecioCompraTextBox.Location = new System.Drawing.Point(532, 150);
+            this.PrecioCompraTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.PrecioCompraTextBox.Name = "PrecioCompraTextBox";
-            this.PrecioCompraTextBox.Size = new System.Drawing.Size(158, 27);
+            this.PrecioCompraTextBox.Size = new System.Drawing.Size(211, 33);
             this.PrecioCompraTextBox.TabIndex = 43;
             this.PrecioCompraTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -105,26 +106,28 @@ namespace ParcialContabilidad.View
             this.CantCompraTextBox.LineIdleColor = System.Drawing.Color.Gray;
             this.CantCompraTextBox.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.CantCompraTextBox.LineThickness = 3;
-            this.CantCompraTextBox.Location = new System.Drawing.Point(201, 100);
-            this.CantCompraTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.CantCompraTextBox.Location = new System.Drawing.Point(268, 150);
+            this.CantCompraTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.CantCompraTextBox.Name = "CantCompraTextBox";
-            this.CantCompraTextBox.Size = new System.Drawing.Size(158, 27);
+            this.CantCompraTextBox.Size = new System.Drawing.Size(211, 33);
             this.CantCompraTextBox.TabIndex = 42;
             this.CantCompraTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // provComboBox
             // 
             this.provComboBox.FormattingEnabled = true;
-            this.provComboBox.Location = new System.Drawing.Point(399, 177);
+            this.provComboBox.Location = new System.Drawing.Point(532, 245);
+            this.provComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.provComboBox.Name = "provComboBox";
-            this.provComboBox.Size = new System.Drawing.Size(157, 21);
+            this.provComboBox.Size = new System.Drawing.Size(208, 24);
             this.provComboBox.TabIndex = 41;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(201, 178);
+            this.dateTimePicker1.Location = new System.Drawing.Point(268, 246);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(158, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(209, 22);
             this.dateTimePicker1.TabIndex = 40;
             // 
             // label6
@@ -132,10 +135,9 @@ namespace ParcialContabilidad.View
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(396, 153);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(528, 215);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 14);
+            this.label6.Size = new System.Drawing.Size(79, 17);
             this.label6.TabIndex = 38;
             this.label6.Text = "Proveedor:";
             // 
@@ -144,10 +146,9 @@ namespace ParcialContabilidad.View
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(396, 82);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(528, 128);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 14);
+            this.label5.Size = new System.Drawing.Size(53, 17);
             this.label5.TabIndex = 37;
             this.label5.Text = "Precio:";
             // 
@@ -156,10 +157,9 @@ namespace ParcialContabilidad.View
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(198, 82);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(264, 128);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 14);
+            this.label4.Size = new System.Drawing.Size(68, 17);
             this.label4.TabIndex = 36;
             this.label4.Text = "Cantidad:";
             // 
@@ -168,10 +168,9 @@ namespace ParcialContabilidad.View
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(198, 153);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(264, 215);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 14);
+            this.label1.Size = new System.Drawing.Size(118, 17);
             this.label1.TabIndex = 34;
             this.label1.Text = "Fecha de compra:";
             // 
@@ -180,10 +179,9 @@ namespace ParcialContabilidad.View
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(11, 82);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(15, 128);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 14);
+            this.label2.Size = new System.Drawing.Size(116, 17);
             this.label2.TabIndex = 33;
             this.label2.Text = "Producto nuevo: ";
             // 
@@ -194,7 +192,7 @@ namespace ParcialContabilidad.View
             this.btnSaveCompra.ActiveFillColor = System.Drawing.SystemColors.HotTrack;
             this.btnSaveCompra.ActiveForecolor = System.Drawing.Color.White;
             this.btnSaveCompra.ActiveLineColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnSaveCompra.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnSaveCompra.BackColor = System.Drawing.Color.Transparent;
             this.btnSaveCompra.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveCompra.BackgroundImage")));
             this.btnSaveCompra.ButtonText = "Agregar a lista";
             this.btnSaveCompra.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -205,10 +203,10 @@ namespace ParcialContabilidad.View
             this.btnSaveCompra.IdleFillColor = System.Drawing.Color.White;
             this.btnSaveCompra.IdleForecolor = System.Drawing.SystemColors.Highlight;
             this.btnSaveCompra.IdleLineColor = System.Drawing.SystemColors.Highlight;
-            this.btnSaveCompra.Location = new System.Drawing.Point(565, 100);
-            this.btnSaveCompra.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSaveCompra.Location = new System.Drawing.Point(753, 150);
+            this.btnSaveCompra.Margin = new System.Windows.Forms.Padding(5);
             this.btnSaveCompra.Name = "btnSaveCompra";
-            this.btnSaveCompra.Size = new System.Drawing.Size(153, 42);
+            this.btnSaveCompra.Size = new System.Drawing.Size(204, 52);
             this.btnSaveCompra.TabIndex = 45;
             this.btnSaveCompra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSaveCompra.Click += new System.EventHandler(this.btnSaveCompra_Click);
@@ -224,10 +222,12 @@ namespace ParcialContabilidad.View
             this.FechaCompra,
             this.Precio,
             this.Proveedor});
-            this.dgvCompra.Location = new System.Drawing.Point(14, 268);
+            this.dgvCompra.Location = new System.Drawing.Point(19, 330);
+            this.dgvCompra.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCompra.Name = "dgvCompra";
             this.dgvCompra.RowHeadersVisible = false;
-            this.dgvCompra.Size = new System.Drawing.Size(734, 199);
+            this.dgvCompra.RowHeadersWidth = 51;
+            this.dgvCompra.Size = new System.Drawing.Size(979, 245);
             this.dgvCompra.TabIndex = 46;
             this.dgvCompra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompra_CellContentClick);
             // 
@@ -235,30 +235,35 @@ namespace ParcialContabilidad.View
             // 
             this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
             // 
             // Cantidad
             // 
             this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
             this.Cantidad.Name = "Cantidad";
             // 
             // FechaCompra
             // 
             this.FechaCompra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.FechaCompra.HeaderText = "Fecha de compra";
+            this.FechaCompra.MinimumWidth = 6;
             this.FechaCompra.Name = "FechaCompra";
             // 
             // Precio
             // 
             this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 6;
             this.Precio.Name = "Precio";
             // 
             // Proveedor
             // 
             this.Proveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Proveedor.HeaderText = "Proveedor";
+            this.Proveedor.MinimumWidth = 6;
             this.Proveedor.Name = "Proveedor";
             // 
             // btnFinalizarCompra
@@ -268,7 +273,7 @@ namespace ParcialContabilidad.View
             this.btnFinalizarCompra.ActiveFillColor = System.Drawing.SystemColors.HotTrack;
             this.btnFinalizarCompra.ActiveForecolor = System.Drawing.Color.White;
             this.btnFinalizarCompra.ActiveLineColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnFinalizarCompra.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnFinalizarCompra.BackColor = System.Drawing.Color.Transparent;
             this.btnFinalizarCompra.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFinalizarCompra.BackgroundImage")));
             this.btnFinalizarCompra.ButtonText = "Finalizar compra";
             this.btnFinalizarCompra.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -279,10 +284,10 @@ namespace ParcialContabilidad.View
             this.btnFinalizarCompra.IdleFillColor = System.Drawing.Color.White;
             this.btnFinalizarCompra.IdleForecolor = System.Drawing.SystemColors.Highlight;
             this.btnFinalizarCompra.IdleLineColor = System.Drawing.SystemColors.Highlight;
-            this.btnFinalizarCompra.Location = new System.Drawing.Point(317, 474);
-            this.btnFinalizarCompra.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFinalizarCompra.Location = new System.Drawing.Point(423, 583);
+            this.btnFinalizarCompra.Margin = new System.Windows.Forms.Padding(5);
             this.btnFinalizarCompra.Name = "btnFinalizarCompra";
-            this.btnFinalizarCompra.Size = new System.Drawing.Size(168, 48);
+            this.btnFinalizarCompra.Size = new System.Drawing.Size(224, 59);
             this.btnFinalizarCompra.TabIndex = 47;
             this.btnFinalizarCompra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnFinalizarCompra.Click += new System.EventHandler(this.bunifuThinButton21_Click);
@@ -294,7 +299,7 @@ namespace ParcialContabilidad.View
             this.btnProvform.ActiveFillColor = System.Drawing.SystemColors.HotTrack;
             this.btnProvform.ActiveForecolor = System.Drawing.Color.White;
             this.btnProvform.ActiveLineColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnProvform.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnProvform.BackColor = System.Drawing.Color.Transparent;
             this.btnProvform.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProvform.BackgroundImage")));
             this.btnProvform.ButtonText = "Nuevo proveedor";
             this.btnProvform.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -305,10 +310,10 @@ namespace ParcialContabilidad.View
             this.btnProvform.IdleFillColor = System.Drawing.Color.White;
             this.btnProvform.IdleForecolor = System.Drawing.SystemColors.Highlight;
             this.btnProvform.IdleLineColor = System.Drawing.SystemColors.Highlight;
-            this.btnProvform.Location = new System.Drawing.Point(563, 163);
-            this.btnProvform.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProvform.Location = new System.Drawing.Point(751, 228);
+            this.btnProvform.Margin = new System.Windows.Forms.Padding(5);
             this.btnProvform.Name = "btnProvform";
-            this.btnProvform.Size = new System.Drawing.Size(153, 46);
+            this.btnProvform.Size = new System.Drawing.Size(204, 57);
             this.btnProvform.TabIndex = 48;
             this.btnProvform.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnProvform.Click += new System.EventHandler(this.bunifuThinButton22_Click);
@@ -318,9 +323,10 @@ namespace ParcialContabilidad.View
             this.checkBox1.AutoSize = true;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(12, 39);
+            this.checkBox1.Location = new System.Drawing.Point(16, 75);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(102, 17);
+            this.checkBox1.Size = new System.Drawing.Size(130, 21);
             this.checkBox1.TabIndex = 49;
             this.checkBox1.Text = "Producto nuevo";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -330,9 +336,10 @@ namespace ParcialContabilidad.View
             // 
             this.prodComboBox.Enabled = false;
             this.prodComboBox.FormattingEnabled = true;
-            this.prodComboBox.Location = new System.Drawing.Point(12, 177);
+            this.prodComboBox.Location = new System.Drawing.Point(16, 245);
+            this.prodComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.prodComboBox.Name = "prodComboBox";
-            this.prodComboBox.Size = new System.Drawing.Size(157, 21);
+            this.prodComboBox.Size = new System.Drawing.Size(208, 24);
             this.prodComboBox.TabIndex = 50;
             // 
             // label7
@@ -340,19 +347,30 @@ namespace ParcialContabilidad.View
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(10, 153);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(13, 215);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 14);
+            this.label7.Size = new System.Drawing.Size(129, 17);
             this.label7.TabIndex = 51;
             this.label7.Text = "Producto exisente: ";
             // 
+            // Compras
+            // 
+            this.Compras.AutoSize = true;
+            this.Compras.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Compras.ForeColor = System.Drawing.Color.White;
+            this.Compras.Location = new System.Drawing.Point(13, 13);
+            this.Compras.Name = "Compras";
+            this.Compras.Size = new System.Drawing.Size(90, 24);
+            this.Compras.TabIndex = 52;
+            this.Compras.Text = "Compras";
+            // 
             // frmCompraVenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(761, 535);
+            this.ClientSize = new System.Drawing.Size(1015, 658);
+            this.Controls.Add(this.Compras);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.prodComboBox);
             this.Controls.Add(this.checkBox1);
@@ -371,7 +389,7 @@ namespace ParcialContabilidad.View
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmCompraVenta";
             this.Text = "r";
             this.Load += new System.EventHandler(this.frmCompraVenta_Load);
@@ -405,5 +423,6 @@ namespace ParcialContabilidad.View
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Proveedor;
+        private System.Windows.Forms.Label Compras;
     }
 }

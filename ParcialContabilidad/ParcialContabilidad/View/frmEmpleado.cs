@@ -140,6 +140,8 @@ namespace ParcialContabilidad.View
         {
             this.dgvClientes.ClearSelection();
             this.NombretxtMaterial.Text = String.Empty;
+            this.ApellidotxtMaterial.Text = String.Empty;
+            this.TelefonotxtMaterial.Text = String.Empty;
         }
 
         private void dgvClientes_MouseClick(object sender, MouseEventArgs e)

@@ -29,6 +29,7 @@ namespace ParcialContabilidad.View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProveedor));
             this.label1 = new System.Windows.Forms.Label();
             this.NombretxtMaterial = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -40,7 +41,12 @@ namespace ParcialContabilidad.View
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.id_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -48,7 +54,7 @@ namespace ParcialContabilidad.View
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(13, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 24);
             this.label1.TabIndex = 4;
@@ -66,7 +72,7 @@ namespace ParcialContabilidad.View
             this.NombretxtMaterial.LineIdleColor = System.Drawing.Color.Gray;
             this.NombretxtMaterial.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.NombretxtMaterial.LineThickness = 3;
-            this.NombretxtMaterial.Location = new System.Drawing.Point(133, 36);
+            this.NombretxtMaterial.Location = new System.Drawing.Point(134, 84);
             this.NombretxtMaterial.Margin = new System.Windows.Forms.Padding(4);
             this.NombretxtMaterial.Name = "NombretxtMaterial";
             this.NombretxtMaterial.Size = new System.Drawing.Size(379, 33);
@@ -78,7 +84,7 @@ namespace ParcialContabilidad.View
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(53, 47);
+            this.label2.Location = new System.Drawing.Point(54, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 17);
             this.label2.TabIndex = 12;
@@ -102,7 +108,7 @@ namespace ParcialContabilidad.View
             this.btnLimpiar.IdleFillColor = System.Drawing.Color.White;
             this.btnLimpiar.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnLimpiar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnLimpiar.Location = new System.Drawing.Point(774, 93);
+            this.btnLimpiar.Location = new System.Drawing.Point(728, 141);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(5);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(181, 41);
@@ -128,7 +134,7 @@ namespace ParcialContabilidad.View
             this.btnEliminar.IdleFillColor = System.Drawing.Color.White;
             this.btnEliminar.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnEliminar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnEliminar.Location = new System.Drawing.Point(583, 93);
+            this.btnEliminar.Location = new System.Drawing.Point(537, 141);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(5);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(181, 41);
@@ -154,7 +160,7 @@ namespace ParcialContabilidad.View
             this.btnActualizar.IdleFillColor = System.Drawing.Color.White;
             this.btnActualizar.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnActualizar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnActualizar.Location = new System.Drawing.Point(774, 36);
+            this.btnActualizar.Location = new System.Drawing.Point(728, 84);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(5);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(181, 41);
@@ -180,7 +186,7 @@ namespace ParcialContabilidad.View
             this.btnGuardar.IdleFillColor = System.Drawing.Color.White;
             this.btnGuardar.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnGuardar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnGuardar.Location = new System.Drawing.Point(583, 36);
+            this.btnGuardar.Location = new System.Drawing.Point(537, 84);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(5);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(181, 41);
@@ -194,14 +200,14 @@ namespace ParcialContabilidad.View
             this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_Cliente,
             this.Nombre});
-            this.dgvClientes.Location = new System.Drawing.Point(16, 213);
+            this.dgvClientes.Location = new System.Drawing.Point(16, 191);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersVisible = false;
             this.dgvClientes.RowHeadersWidth = 51;
             this.dgvClientes.RowTemplate.Height = 24;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(991, 433);
+            this.dgvClientes.Size = new System.Drawing.Size(991, 455);
             this.dgvClientes.TabIndex = 24;
             this.dgvClientes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvClientes_MouseClick);
             // 
@@ -221,11 +227,40 @@ namespace ParcialContabilidad.View
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel1;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1015, 50);
+            this.panel1.TabIndex = 26;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::ParcialContabilidad.Properties.Resources.Close_Window__2_48px;
+            this.pictureBox1.Location = new System.Drawing.Point(966, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(41, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            // 
             // frmProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1015, 658);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEliminar);
@@ -238,6 +273,8 @@ namespace ParcialContabilidad.View
             this.Name = "frmProveedor";
             this.Text = "frmProveedor";
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,5 +292,8 @@ namespace ParcialContabilidad.View
         private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

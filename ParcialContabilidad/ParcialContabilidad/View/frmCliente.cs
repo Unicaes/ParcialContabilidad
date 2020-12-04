@@ -133,6 +133,7 @@ namespace ParcialContabilidad.View
         {
             this.dgvClientes.ClearSelection();
             this.NombretxtMaterial.Text = String.Empty;
+            this.ApellidotxtMaterial.Text = String.Empty;
         }
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)

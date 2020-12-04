@@ -18,13 +18,14 @@ namespace ParcialContabilidad.View
         private ApiService api;
         public frmProveedor()
         {
-            this.TopLevel = false;
             InitializeComponent();
             this.BackColor = ColorPallete.LightBlue;
 
             api = new ApiService();
 
             LoadData();
+
+            this.panel1.BackColor = ColorPallete.DarkBlue;
 
             this.NombretxtMaterial.LineIdleColor = ColorPallete.DarkBlue;
             this.NombretxtMaterial.LineFocusedColor = ColorPallete.Purple;
@@ -130,6 +131,16 @@ namespace ParcialContabilidad.View
         private void dgvClientes_MouseClick(object sender, MouseEventArgs e)
         {
             this.NombretxtMaterial.Text = this.dgvClientes.CurrentRow.Cells[1].Value.ToString();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

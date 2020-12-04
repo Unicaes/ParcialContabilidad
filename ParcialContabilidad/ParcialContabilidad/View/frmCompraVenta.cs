@@ -30,6 +30,9 @@ namespace ParcialContabilidad.View
             InitializeComponent();
             this.BackColor = ColorPallete.LightBlue;
             api = new ApiService();
+            this.btnSaveCompra.BackColor = ColorPallete.LightBlue;
+            this.btnProvform.BackColor = ColorPallete.LightBlue;
+            this.btnFinalizarCompra.BackColor = ColorPallete.LightBlue;
             LoadProveedor();
 
         }
@@ -175,7 +178,7 @@ namespace ParcialContabilidad.View
 
         private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
-            Form item = new frmProveedor();
+            frmProveedor item = new frmProveedor();
             item.Show();
         }
 
