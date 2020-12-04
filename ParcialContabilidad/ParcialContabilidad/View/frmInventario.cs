@@ -25,6 +25,7 @@ namespace ParcialContabilidad.View
 
             api = new ApiService();
             this.BackColor = ColorPallete.LightBlue;
+            this.dgvProducto.ClearSelection();
             this.cargar_productos();
         }
 
@@ -66,32 +67,38 @@ namespace ParcialContabilidad.View
             List<Promedio> lprom = new List<Promedio>();
 
             // COMPRAS
-            for (int i = 0; i < detalle_compra.Count; i++)
+            if (detalle_compra != null)
             {
-                if (detalle_compra[i].id_producto == product_id)
+                for (int i = 0; i < detalle_compra.Count; i++)
                 {
-                    Promedio prom = new Promedio();
-                    prom.fecha = (DateTime) detalle_compra[i].Compra.fecha;
-                    prom.concepto = "COMPRA";
-                    prom.entrada = (int) detalle_compra[i].cantidad;
-                    prom.salida = 0;
-                    prom.costo_unitario = (float) detalle_compra[i].precio_unitario;
-                    lprom.Add(prom);
-                }            
+                    if (detalle_compra[i].id_producto == product_id)
+                    {
+                        Promedio prom = new Promedio();
+                        prom.fecha = (DateTime) detalle_compra[i].Compra.fecha;
+                        prom.concepto = "COMPRA";
+                        prom.entrada = (int) detalle_compra[i].cantidad;
+                        prom.salida = 0;
+                        prom.costo_unitario = (float) detalle_compra[i].precio_unitario;
+                        lprom.Add(prom);
+                    }            
+                }
             }
 
             // VENTAS
-            for (int i = 0; i < detalle_venta.Count; i++)
+            if (detalle_venta != null)
             {
-                if (detalle_venta[i].id_producto == product_id)
+                for (int i = 0; i < detalle_venta.Count; i++)
                 {
-                    Promedio prom = new Promedio();
-                    prom.fecha = (DateTime)detalle_venta[i].Venta.fecha;
-                    prom.concepto = "VENTA";
-                    prom.entrada = 0;
-                    prom.salida = (int)detalle_venta[i].cantidad;
-                    prom.costo_unitario = (float)detalle_venta[i].precio_unitario;
-                    lprom.Add(prom);
+                    if (detalle_venta[i].id_producto == product_id)
+                    {
+                        Promedio prom = new Promedio();
+                        prom.fecha = (DateTime)detalle_venta[i].Venta.fecha;
+                        prom.concepto = "VENTA";
+                        prom.entrada = 0;
+                        prom.salida = (int)detalle_venta[i].cantidad;
+                        prom.costo_unitario = (float)detalle_venta[i].precio_unitario;
+                        lprom.Add(prom);
+                    }
                 }
             }
 
