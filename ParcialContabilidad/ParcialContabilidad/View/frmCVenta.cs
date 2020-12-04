@@ -149,7 +149,10 @@ namespace ParcialContabilidad.View
                 detVenta.Venta.Empleado = obsEmpleado[vendComboBox.SelectedIndex];
                 detVenta.id_producto = producto.id_producto;
                 detVenta.cantidad = Convert.ToInt32(CantCompraTextBox.Text);
-                detVenta.monto = detVenta.cantidad * detVenta.precio_unitario;
+                frmInventario frm = new frmInventario();
+                frm.get_promedio(Convert.ToInt32(detVenta.id_producto));
+                double montoVenta = frm.ultimoPromedio;
+                detVenta.monto = (float)montoVenta * detVenta.cantidad;
                 
                 listaProducto.Add(detVenta);
 
@@ -184,7 +187,12 @@ namespace ParcialContabilidad.View
         private void PrecioCompraTextBox_OnValueChanged(object sender, EventArgs e)
         {
             Detalle_Venta detVenta = new Detalle_Venta();
-            double precioreal = Convert.ToDouble(detVenta.cantidad * detVenta.precio_unitario);
+
+            frmInventario frm = new frmInventario();
+            frm.get_promedio(Convert.ToInt32(prodComboBox.SelectedIndex));
+            double montoVenta = frm.ultimoPromedio;
+
+            double precioreal = montoVenta * Convert.ToInt32(CantCompraTextBox.Text);
             label3.Text = Convert.ToString(precioreal);
         }
     }
