@@ -150,8 +150,8 @@ namespace ParcialContabilidad.View
                 detVenta.id_producto = producto.id_producto;
                 detVenta.cantidad = Convert.ToInt32(CantCompraTextBox.Text);
                 frmInventario frm = new frmInventario();
-                frm.get_promedio(Convert.ToInt32(detVenta.id_producto));
-                double montoVenta = frm.ultimoPromedio;
+                
+                double montoVenta = await frm.GetLastPromedio(Convert.ToInt32(detVenta.id_producto));
                 detVenta.monto = (float)montoVenta * detVenta.cantidad;
                 
                 listaProducto.Add(detVenta);

@@ -45,7 +45,7 @@ namespace ParcialContabilidad.View
             }
         }
 
-        public async void get_promedio(int product_id)
+        public async Task<double> get_promedio(int product_id)
         {
             this.dgvPromedio.Rows.Clear();
             this.dgvPromedio.Refresh();
@@ -164,12 +164,12 @@ namespace ParcialContabilidad.View
                 this.txtCostoVenta.Text = "$ " + costo_venta;
                 this.txtUtilidad.Text = "$ " + saldo.ToString();
             }
-            ultimoPromedio = lprom[lprom.Count() - 1].costo_promedio;
+            return lprom[lprom.Count() - 1].costo_promedio;
+            
         }
-        public double GetLastPromedio(int product_id)
+        public async Task<double> GetLastPromedio(int id_producto)
         {
-            get_promedio(product_id);
-            return ultimoPromedio;
+            return await get_promedio(id_producto);
         }
         private void DgvProducto_CellClick(object sender, DataGridViewCellEventArgs e)
         {
