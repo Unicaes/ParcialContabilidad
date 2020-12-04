@@ -145,7 +145,8 @@ namespace ParcialContabilidad.View
                     if (i!=0)
                     {
                         lprom[i].costo_promedio = lprom[i-1].costo_promedio;
-                    }      
+                    }
+                    lprom[i].costo_unitario = 0;
                 }
                 else
                 {
@@ -162,17 +163,17 @@ namespace ParcialContabilidad.View
                     lprom[i].entrada.ToString(),
                     lprom[i].salida.ToString(),
                     existencia.ToString(),
-                    "$ " + lprom[i].costo_unitario.ToString(),
-                    "$ " + lprom[i].costo_promedio.ToString(),
-                    "$ " + lprom[i].debe.ToString(),
-                    "$ " + lprom[i].haber.ToString(),
-                    "$ " + saldo.ToString()
+                    String.Format("{0:C}", lprom[i].costo_unitario),
+                    String.Format("{0:C}", lprom[i].costo_promedio),
+                    String.Format("{0:C}", lprom[i].debe),
+                    String.Format("{0:C}", lprom[i].haber),
+                    String.Format("{0:C}", saldo)
                 });
 
                 this.txtEntradas.Text = total_entradas.ToString();
                 this.txtSalidas.Text = total_salidas.ToString();
-                this.txtCostoVenta.Text = "$ " + costo_venta;
-                this.txtUtilidad.Text = "$ " + saldo.ToString();
+                this.txtCostoVenta.Text = String.Format("{0:C}", costo_venta);
+                this.txtUtilidad.Text = String.Format("{0:C}", saldo);
             }
             return lprom[lprom.Count() - 1].costo_promedio;
             
