@@ -144,6 +144,7 @@ namespace ParcialContabilidad.View
                 detVenta.Producto = producto;
                 detVenta.Venta = new Venta();
                 detVenta.Venta.Empleado = obsEmpleado[vendComboBox.SelectedIndex];
+                detVenta.precio_unitario = 1;
                 detVenta.id_producto = producto.id_producto;
                 detVenta.cantidad = Convert.ToInt32(CantCompraTextBox.Text);
                 frmInventario frm = new frmInventario();
