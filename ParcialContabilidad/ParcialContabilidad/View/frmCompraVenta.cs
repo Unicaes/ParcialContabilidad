@@ -45,6 +45,7 @@ namespace ParcialContabilidad.View
             this.provComboBox.Refresh();
             this.prodComboBox.Refresh();
 
+
             if (!response.IsSuccess || !responses.IsSuccess)
             {
                 return;
@@ -128,7 +129,8 @@ namespace ParcialContabilidad.View
             MessageBox.Show("La compra se ha efectuado", "correctamente",
             MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.dgvCompra.Rows.Clear();
-           
+            this.prodComboBox.Items.Clear();
+            this.provComboBox.Items.Clear();
             LoadProveedor();
         }
 
