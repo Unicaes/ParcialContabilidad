@@ -124,7 +124,12 @@ namespace ParcialContabilidad.View
                 listaProducto[i].Compra = null;
                 await api.Post<Detalle_Compra>("Detalle_compra", listaProducto[i]);
             }
+            
+            MessageBox.Show("La compra se ha efectuado", "correctamente",
+            MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.dgvCompra.Rows.Clear();
+           
+            LoadProveedor();
         }
 
         private async void btnSaveCompra_Click(object sender, EventArgs e)
